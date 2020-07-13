@@ -7,7 +7,7 @@ import Query
 
 search_result = None
 
-queries_list = [Query.StandardQuery(), Query.ErrorQuery()]
+queries_list = [Query.StandardQuery(), Query.ErrorQuery(), Query.StackOverflowQuery()]
 
 while not (search_result == True):
     query = random.choice(queries_list)
