@@ -8,3 +8,5 @@
 Dependencies *(Dependencias)*:
 - Selenium
 - Progressbar2
+- requests
+- BeautifulSoup4
