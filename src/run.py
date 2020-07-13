@@ -1,5 +1,6 @@
 import random
 import time
+import progressbar
 
 import scrape
 import Query
@@ -13,6 +14,11 @@ while not (search_result == True):
     query = query.text()
     print("Vamos a buscar: " + query)
     scrape.scrape(query)
-    time.sleep(1)
+    seconds_wait = random.randint(5,15)
+    print("Waiting for", seconds_wait, "seconds")
+    with progressbar.ProgressBar(max_value=seconds_wait) as bar:
+        for x in range(seconds_wait):
+            bar.update(x)
+            time.sleep(1)
 
-print("ÉXITO. SE HA ENCONTRADO UNA CAJA DE GOOGLE FOOBAR.")
+print("SUCCESS. A GOOGLE FOOBAR BOX HAS BEEN FOUND.")
