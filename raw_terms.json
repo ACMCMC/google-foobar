@@ -1,0 +1,50 @@
+{
+    "list": [
+        {
+            "type": "verbs",
+            "word_list": [
+                "access",
+                "search",
+                "execute",
+                "parse",
+                "decode",
+                "refactor",
+                "compile",
+                "return"
+            ]
+        },
+        {
+            "type": "language_names",
+            "word_list": [
+                "Python",
+                "C++",
+                "C#",
+                "C",
+                "Go",
+                "Java",
+                "JavaScript",
+                "JS",
+                "TypeScript",
+                "Assembly",
+                "Haskell",
+                "Octave",
+                "PHP"
+            ]
+        },
+        {
+            "type": "concepts",
+            "word_list": [
+                "array",
+                "list",
+                "variable",
+                "function",
+                "lambda function",
+                "object",
+                "class",
+                "parent class",
+                "primitive",
+                "template"
+            ]
+        }
+    ]
+}
