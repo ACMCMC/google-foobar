@@ -7,7 +7,14 @@ def scrape(search_query): #search_query is a string of words we want to use to s
 
     #load the search URL
     results_page = requests.get(SEARCH_URL+search_query.replace(" ","+"))
-    print("Getting:", SEARCH_URL+search_query.replace(" ","+"))
+
+    if results_page.status_code != 200:
+        print("Something went wrong. Got HTTP status code", results_page.status_code)
+
+    parser = BeautifulSoup(results_page.text, 'html.parser')
+
+    results_list = list(map(lambda x: x.find("div"), parser.find_all("h3")))
+    print([x.contents[0] for x in results_list][0:5])
 
     #we return TRUE if we found the result we wanted (the Google Foobar box)
 
