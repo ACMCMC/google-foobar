@@ -1,5 +1,4 @@
-import requests
-from bs4 import BeautifulSoup
+from selenium import webdriver
 
 SEARCH_URL = "https://www.google.com/search?q=" #this is the base URL, to which we have to join the search query
 
@@ -8,10 +7,10 @@ SEARCH_URL = "https://www.google.com/search?q=" #this is the base URL, to which 
 def scrape(search_query): #search_query is a string of words we want to use to search for (related to programming questions), separated by spaces
 
     #load the search URL
-    results_page = requests.get(SEARCH_URL+search_query.replace(" ","+"))
+    driver = webdriver.Chrome("./chromedriver")
+    driver.get(SEARCH_URL+search_query.replace(" ","+"))
 
-    if results_page.status_code != 200:
-        print("Something went wrong. Got HTTP status code", results_page.status_code)
+    print(driver.title)
 
     #we return TRUE if we found the result we wanted (the Google Foobar box)
 
